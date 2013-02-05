@@ -1,0 +1,16 @@
+{
+  "name": "drop-anywhere",
+  "description": "Drop anywhere to upload a file",
+  "version": "0.0.1",
+  "keywords": ["upload", "drag", "drop", "file"],
+  "dependencies": {
+    "dropload-component": "*",
+    "events-component-2": "*"
+  },
+  "license": "MIT",
+  "component": {
+    "scripts": {
+      "drop-anywhere/index.js": "index.js"
+    }
+  }
+}
