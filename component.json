@@ -4,8 +4,7 @@
   "description": "Drop anywhere to upload a file",
   "version": "0.0.1",
   "keywords": ["upload", "drag", "drop", "file"],
-  "dependencies": {},
-  "development": {
+  "dependencies": {
     "component/events": "*",
     "component/dropload": "*"
   },
