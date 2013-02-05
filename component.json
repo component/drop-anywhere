@@ -1,0 +1,13 @@
+{
+  "name": "drop-anywhere",
+  "repo": "component/drop-anywhere",
+  "description": "Drop anywhere to upload a file",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}
