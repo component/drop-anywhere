@@ -2,22 +2,34 @@
 <head>
   <title>Drop Anywhere</title>
   <style type="text/css">
-  #drop-anywhere {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,.5);
-    line-height: 500px;
-    text-align: center;
-  }
-  #drop-anywhere::before {
-    content: 'Drop to upload!';
-  }
+    body {
+      text-align: center;
+    }
+    #drop-anywhere {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.8);
+      line-height: 500px;
+      text-align: center;
+      color: white;
+    }
+    #drop-anywhere::before {
+      content: 'Drop to upload!';
+    }
+    #content {
+      width: 80%;
+      height: 80%;
+      line-height: 300px;
+      margin: 0 auto;
+      background: #eee;
+    }
   </style>
 </head>
 <body>
+  <div id="content">Some content here</div>
   <script type="text/javascript" src="build/build.js"></script>
   <script type="text/javascript">
     var dropAnywhere = require('drop-anywhere');
