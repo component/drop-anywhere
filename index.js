@@ -4,13 +4,13 @@
  */
 
 var Dropload = require('dropload')
-  , classes = require('classes')
   , events = require('events');
 
 module.exports = DropAnywhere;
 
 function DropAnywhere(fn) {
   if (!(this instanceof DropAnywhere)) return new DropAnywhere(fn);
+  var self = this;
   this.el = document.createElement('div');
   this.el.id = 'drop-anywhere';
   this.events = events(this.el, this);
@@ -20,12 +20,17 @@ function DropAnywhere(fn) {
   this.drop = Dropload(this.el);
   this.drop.on('error', fn);
   this.drop.on('upload', function(upload){
+    self.ondragleave();
     fn(null, upload);
   });
 }
 
-DropAnywhere.prototype.dragenter = function(){
-  console.log('enter');
+DropAnywhere.prototype.ondragenter = function(){
+  document.body.appendChild(this.el);
+};
+
+DropAnywhere.prototype.ondragleave = function(){
+  document.body.removeChild(this.el);
 };
 
 DropAnywhere.prototype.unbind = function(){

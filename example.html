@@ -20,7 +20,10 @@
 <body>
   <script type="text/javascript" src="build/build.js"></script>
   <script type="text/javascript">
-
+    var dropAnywhere = require('drop-anywhere');
+    dropAnywhere(function(err, upload){
+      console.log('upload %s', upload.file.name);
+    });
   </script>
 </body>
 </html>
