@@ -2,6 +2,14 @@
 <head>
   <title>Drop Anywhere</title>
   <style type="text/css">
+    @-webkit-keyframes show {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
     body {
       text-align: center;
     }
@@ -15,9 +23,14 @@
       line-height: 500px;
       text-align: center;
       color: white;
+      display: none;
     }
     #drop-anywhere::before {
       content: 'Drop to upload!';
+    }
+    #drop-anywhere.show {
+      display: block;
+      -webkit-animation: show 300ms;
     }
     #content {
       width: 80%;

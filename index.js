@@ -26,12 +26,15 @@ function DropAnywhere(fn) {
   this.el.id = 'drop-anywhere';
   this.events = events(this.el, this);
   this.docEvents = events(document.body, this);
-  this.events.bind('drop', 'remove');
-  this.events.bind('dragleave', 'remove');
-  this.docEvents.bind('dragenter', 'add');
+  this.events.bind('drop', 'hide');
+  this.events.bind('dragleave', 'hide');
+  this.docEvents.bind('dragenter', 'show');
   this.drop = Dropload(this.el);
   this.drop.on('error', fn);
-  this.drop.on('upload', function(upload){ fn(null, upload) });
+  this.drop.on('upload', function(upload){
+    fn(null, upload);
+  });
+  this.add();
 }
 
 /**
@@ -51,12 +54,29 @@ DropAnywhere.prototype.remove = function(){
 };
 
 /**
+ * Show the dropzone.
+ */
+
+DropAnywhere.prototype.show = function(){
+  this.el.className = 'show';
+};
+
+/**
+ * Hide the dropzone.
+ */
+
+DropAnywhere.prototype.hide = function(){
+  this.el.className = '';
+};
+
+/**
  * Unbind.
  *
  * @api public
  */
 
 DropAnywhere.prototype.unbind = function(){
+  this.remove();
   this.docEvents.unbind();
   this.events.unbind();
   this.drop.unbind();
