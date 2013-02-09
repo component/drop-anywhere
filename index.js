@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -21,7 +20,6 @@ module.exports = DropAnywhere;
 
 function DropAnywhere(fn) {
   if (!(this instanceof DropAnywhere)) return new DropAnywhere(fn);
-  var self = this;
   this.el = document.createElement('div');
   this.el.id = 'drop-anywhere';
   this.events = events(this.el, this);
