@@ -26,6 +26,7 @@ function DropAnywhere(fn) {
   this.el.id = 'drop-anywhere';
   this.events = events(this.el, this);
   this.docEvents = events(document.body, this);
+  this.events.bind('click', 'hide');
   this.events.bind('drop', 'hide');
   this.events.bind('dragleave', 'hide');
   this.docEvents.bind('dragenter', 'show');
