@@ -12,8 +12,16 @@
 ```js
 var dropAnywhere = require('drop-anywhere');
 
-var drop = dropAnywhere(function(err, upload){
-  console.log('upload %s', upload.file.name);
+var drop = dropAnywhere(function(err, drop){
+  switch (drop.type) {
+    case 'file':
+      console.log('upload %s', drop.item.file.name);
+      break;
+    case 'html':
+    case 'text':
+    case 'url':
+      break;
+  }
 });
 ```
 

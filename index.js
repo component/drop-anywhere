@@ -21,7 +21,7 @@ module.exports = DropAnywhere;
 
 function DropAnywhere(fn) {
   if (!(this instanceof DropAnywhere)) return new DropAnywhere(fn);
-  var self = this;
+  this.callback = fn;
   this.el = document.createElement('div');
   this.el.id = 'drop-anywhere';
   this.events = events(this.el, this);
@@ -32,11 +32,29 @@ function DropAnywhere(fn) {
   this.docEvents.bind('dragenter', 'show');
   this.drop = Dropload(this.el);
   this.drop.on('error', fn);
-  this.drop.on('upload', function(upload){
-    fn(null, upload);
-  });
+  this.handle('upload');
+  this.handle('text');
+  this.handle('html');
+  this.handle('url');
   this.add();
 }
+
+/**
+ * Handle the given item `type`.
+ *
+ * @param {String} type
+ * @api private
+ */
+
+DropAnywhere.prototype.handle = function(type){
+  var self = this;
+  this.drop.on(type, function(item){
+    self.callback(null, {
+      type: type,
+      item: item
+    });
+  });
+};
 
 /**
  * Add the element.

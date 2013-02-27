@@ -47,8 +47,15 @@
   <script type="text/javascript">
     var dropAnywhere = require('drop-anywhere');
 
-    var drop = dropAnywhere(function(err, upload){
-      console.log('upload %s', upload.file.name);
+    var drop = dropAnywhere(function(err, drop){
+      switch (drop.type) {
+        case 'upload':
+          console.log('upload %s', drop.item.file.name);
+          break;
+        case 'url':
+          console.log('url %s', drop.item);
+          break;
+      }
     });
 
     setTimeout(function(){
