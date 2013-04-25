@@ -6,7 +6,7 @@
   "keywords": ["upload", "drag", "drop", "file"],
   "dependencies": {
     "component/events": "*",
-    "component/dropload": "*"
+    "component/drop": "0.0.1"
   },
   "license": "MIT",
   "scripts": [

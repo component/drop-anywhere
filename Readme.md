@@ -12,16 +12,10 @@
 ```js
 var dropAnywhere = require('drop-anywhere');
 
-var drop = dropAnywhere(function(err, drop){
-  switch (drop.type) {
-    case 'file':
-      console.log('upload %s', drop.item.file.name);
-      break;
-    case 'html':
-    case 'text':
-    case 'url':
-      break;
-  }
+var drop = dropAnywhere(function(e){
+  e.items.forEach(function(item){
+    console.log(item);
+  });
 });
 ```
 

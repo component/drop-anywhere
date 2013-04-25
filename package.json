@@ -4,7 +4,7 @@
   "version": "0.3.0",
   "keywords": ["upload", "drag", "drop", "file"],
   "dependencies": {
-    "dropload-component": "*",
+    "drop-component": "0.0.1",
     "events-component-2": "*"
   },
   "license": "MIT",

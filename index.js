@@ -3,8 +3,8 @@
  * Module dependencies.
  */
 
-var Dropload = require('dropload')
-  , events = require('events');
+var drop = require('drop');
+var events = require('events');
 
 /**
  * Expose `DropAnywhere`.
@@ -30,31 +30,9 @@ function DropAnywhere(fn) {
   this.events.bind('drop', 'hide');
   this.events.bind('dragleave', 'hide');
   this.docEvents.bind('dragenter', 'show');
-  this.drop = Dropload(this.el);
-  this.drop.on('error', fn);
-  this.handle('upload');
-  this.handle('text');
-  this.handle('html');
-  this.handle('url');
+  this.drop = drop(this.el, this.callback);
   this.add();
 }
-
-/**
- * Handle the given item `type`.
- *
- * @param {String} type
- * @api private
- */
-
-DropAnywhere.prototype.handle = function(type){
-  var self = this;
-  this.drop.on(type, function(item){
-    self.callback(null, {
-      type: type,
-      item: item
-    });
-  });
-};
 
 /**
  * Add the element.
