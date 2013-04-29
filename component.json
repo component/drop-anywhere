@@ -2,7 +2,7 @@
   "name": "drop-anywhere",
   "repo": "component/drop-anywhere",
   "description": "Drop anywhere to upload a file",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "keywords": ["upload", "drag", "drop", "file"],
   "dependencies": {
     "component/events": "*",
