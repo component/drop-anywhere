@@ -5,6 +5,7 @@
   "version": "0.5.0",
   "keywords": ["upload", "drag", "drop", "file"],
   "dependencies": {
+    "component/classes": "*",
     "component/events": "*",
     "component/drop": "0.1.4"
   },
