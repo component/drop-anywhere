@@ -1,4 +1,9 @@
 
+0.6.0 / 2013-06-26 
+==================
+
+ * use `component/classes` to unobtrusively add/remove the "show" class
+
 0.4.1 / 2013-04-29 
 ==================
 
