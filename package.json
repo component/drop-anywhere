@@ -1,7 +1,7 @@
 {
   "name": "drop-anywhere",
   "description": "Drop anywhere to upload a file",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "keywords": ["upload", "drag", "drop", "file"],
   "dependencies": {
     "drop-component": "0.1.x",
