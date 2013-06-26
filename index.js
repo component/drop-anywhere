@@ -5,6 +5,7 @@
 
 var drop = require('drop');
 var events = require('events');
+var classes = require('classes');
 
 /**
  * Expose `DropAnywhere`.
@@ -25,6 +26,7 @@ function DropAnywhere(fn) {
   this.el = document.createElement('div');
   this.el.id = 'drop-anywhere';
   this.events = events(this.el, this);
+  this.classes = classes(this.el);
   this.docEvents = events(document.body, this);
   this.events.bind('click', 'hide');
   this.events.bind('drop', 'hide');
@@ -55,7 +57,7 @@ DropAnywhere.prototype.remove = function(){
  */
 
 DropAnywhere.prototype.show = function(){
-  this.el.className = 'show';
+  this.classes.add('show');
 };
 
 /**
@@ -63,7 +65,7 @@ DropAnywhere.prototype.show = function(){
  */
 
 DropAnywhere.prototype.hide = function(){
-  this.el.className = '';
+  this.classes.remove('show');
 };
 
 /**
