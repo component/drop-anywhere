@@ -9,6 +9,7 @@
     "component/drop": "0.1.4"
   },
   "license": "MIT",
+  "styles": ["drop-anywhere.css"],
   "scripts": [
     "index.js"
   ]

@@ -11,6 +11,7 @@
   "component": {
     "scripts": {
       "drop-anywhere/index.js": "index.js"
-    }
+    },
+    "styles": ["drop-anywhere.css"]
   }
 }

@@ -1,5 +1,5 @@
 
-build: components index.js
+build: components index.js drop-anywhere.css
 	@component build --dev
 
 components: component.json
