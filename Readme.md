@@ -27,9 +27,9 @@ var drop = dropAnywhere(function(e){
 
 ## Example CSS
 
-  The classname `.show` is used to actually display the dropzone,
-  so you must style it accordingly with `display: block`, something
-  like:
+  The classname `.show` is added when a user triggers a dragstart event. By
+  default `#drop-anywhere` is stretched 100% horizontally and vertically, with
+  a semi-transparent background.
 
 ```css
 @-webkit-keyframes show {
@@ -40,26 +40,23 @@ var drop = dropAnywhere(function(e){
     opacity: 1;
   }
 }
+
 body {
   text-align: center;
 }
+
 #drop-anywhere {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,.8);
   line-height: 500px;
   text-align: center;
   color: white;
   display: none;
 }
+
 #drop-anywhere::before {
   content: 'Drop to upload!';
 }
+
 #drop-anywhere.show {
-  display: block;
   -webkit-animation: show 300ms;
 }
   ```
