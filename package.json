@@ -2,7 +2,12 @@
   "name": "drop-anywhere",
   "description": "Drop anywhere to upload a file",
   "version": "0.6.1",
-  "keywords": ["upload", "drag", "drop", "file"],
+  "keywords": [
+    "upload",
+    "drag",
+    "drop",
+    "file"
+  ],
   "dependencies": {
     "classes-component": "*",
     "drop-component": "0.1.x",
@@ -13,6 +18,12 @@
     "scripts": {
       "drop-anywhere/index.js": "index.js"
     },
-    "styles": ["drop-anywhere.css"]
+    "styles": [
+      "drop-anywhere.css"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/component/drop-anywhere.git"
   }
 }
