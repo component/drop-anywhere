@@ -27,11 +27,11 @@ function DropAnywhere(fn) {
   this.el.id = 'drop-anywhere';
   this.events = events(this.el, this);
   this.classes = classes(this.el);
-  this.docEvents = events(document.body, this);
+  this.winEvents = events(window, this);
   this.events.bind('click', 'hide');
   this.events.bind('drop', 'hide');
   this.events.bind('dragleave', 'hide');
-  this.docEvents.bind('dragenter', 'show');
+  this.winEvents.bind('dragenter', 'show');
   this.drop = drop(this.el, this.callback);
   this.add();
 }
@@ -76,7 +76,7 @@ DropAnywhere.prototype.hide = function(){
 
 DropAnywhere.prototype.unbind = function(){
   this.remove();
-  this.docEvents.unbind();
+  this.winEvents.unbind();
   this.events.unbind();
   this.drop.unbind();
 };
