@@ -6,8 +6,8 @@
   "keywords": ["upload", "drag", "drop", "file"],
   "dependencies": {
     "component/classes": "*",
-    "component/events": "*",
-    "component/drop": "0.1.4"
+    "component/drop": "0.1.7",
+    "component/events": "*"
   },
   "license": "MIT",
   "styles": ["drop-anywhere.css"],
