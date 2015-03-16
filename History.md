@@ -1,4 +1,12 @@
 
+0.7.0 / 2015-03-13
+==================
+
+  * fix browserify build
+  * listen on whole window for drag enter (#5, @juliangruber)
+  * component: update "drop" to v0.1.7
+  * package: add "repository" field (#4)
+
 0.6.1 / 2013-07-02
 ==================
 

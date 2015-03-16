@@ -2,15 +2,22 @@
   "name": "drop-anywhere",
   "repo": "component/drop-anywhere",
   "description": "Drop anywhere to upload a file",
-  "version": "0.6.1",
-  "keywords": ["upload", "drag", "drop", "file"],
+  "version": "0.7.0",
+  "keywords": [
+    "upload",
+    "drag",
+    "drop",
+    "file"
+  ],
   "dependencies": {
     "component/classes": "*",
     "component/drop": "0.1.7",
     "component/events": "*"
   },
   "license": "MIT",
-  "styles": ["drop-anywhere.css"],
+  "styles": [
+    "drop-anywhere.css"
+  ],
   "scripts": [
     "index.js"
   ]
